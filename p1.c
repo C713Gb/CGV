@@ -660,7 +660,7 @@ void display1()//Drawing the Graph
 	
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5.0);
-	glColor3f(1.0,1.0,1.0);
+	glColor3f(1.0,1.0,1.0);//
 	glBegin(GL_LINES);
 	glVertex2i(10,10);
 	glVertex2i(910,10);
@@ -673,7 +673,7 @@ void display1()//Drawing the Graph
 	for(i=0;i<9;i++)
 	{
 		a=a+100;
-		glColor3f(1.0,1.0,1.0);
+		glColor3f(0.0,0.0,0);
 		glBegin(GL_LINES);
 		glVertex2i(a,10);
 		glVertex2i(a,20);
@@ -683,7 +683,7 @@ void display1()//Drawing the Graph
 	for(i=0;i<9;i++)
 	{
 		a=a+100;
-		glColor3f(1.0,1.0,1.0);
+		glColor3f(0.0,0.0,0.0);
 		glBegin(GL_LINES);
 		glVertex2i(10,a);
 		glVertex2i(20,a);
@@ -761,7 +761,7 @@ void display()//Main Page
 	for(i=0;t[i]!='\0';i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,t[i]);
 
-	glColor3f(1.0,0.0,1.0);
+	glColor3f(0.0,0.0,0.0);
 	char s[]="1CD19CS055";
 	glRasterPos2f(200.0,350.0);
 	for(i=0;s[i]!='\0';i++)
@@ -773,7 +773,7 @@ void display()//Main Page
 	for(i=0;u[i]!='\0';i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,u[i]);
 
-	glColor3f(1.0,0.0,1.0);
+	glColor3f(0.0,0.0,0.0);
 	char v[]="1CD19CS158";
 	glRasterPos2f(200.0,300.0);
 	for(i=0;v[i]!='\0';i++)
@@ -819,7 +819,8 @@ int main(int argc,char **argv)
 	int i;
 	for(i=0;i<9;i++)
 	{
-		scanf("%d",&A[i]);
+		A[i]=1;
+		//scanf("%d",&A[i]);
 	}
 	
 	glutInit(&argc,argv);
@@ -833,7 +834,7 @@ int main(int argc,char **argv)
 	glutAddMenuEntry("Exit",3);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 	glutDisplayFunc(display);
-	glClearColor(0.0,0.0,0.0,0.0);
+	glClearColor(0.8,0.0,1.0,0.0);
 	myinit();
 	glutMainLoop();
 	return 0;
